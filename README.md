@@ -4,9 +4,9 @@
 <br/>
 <img src="https://raw.githubusercontent.com/uetchy/create-create-app/master/.github/assets/ss1.png" alt="screenshot"/>
 <br/><br/>
-<a href="https://npmjs.org/package/create-nintializer"><img src="https://img.shields.io/npm/v/create-nintializer.svg"></a>
-<a href="https://npmjs.org/package/create-nintializer"><img src="https://badgen.net/npm/dt/create-nintializer"></a>
-<a href="https://github.com/uetchy/create-nintializer/actions?workflow=test"><img src="https://github.com/uetchy/create-nintializer/workflows/test/badge.svg"/></a>
+<a href="https://npmjs.org/package/create-initializer"><img src="https://img.shields.io/npm/v/create-initializer.svg"></a>
+<a href="https://npmjs.org/package/create-initializer"><img src="https://badgen.net/npm/dt/create-initializer"></a>
+<a href="https://github.com/uetchy/create-initializer/actions?workflow=test"><img src="https://github.com/uetchy/create-initializer/workflows/test/badge.svg"/></a>
 </div>
 
 ## NOTE
@@ -172,7 +172,7 @@ You can find the app config in `src/cli.js` (or `src/cli.ts` if you chose `types
 
 ```ts
 import { resolve } from 'path';
-import { create } from 'create-create-app';
+import { create } from 'create-initializer';
 
 create('create-greet', {
   templateRoot: resolve(__dirname, '..', 'templates'),
