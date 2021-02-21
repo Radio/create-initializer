@@ -1,7 +1,7 @@
 {
   "name": "create-initializer",
   "description": "Create your own `create-something` app.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "ClassicOldSong <yukino@yuki.network>",
   "scripts": {
     "build": "npm run tsup -- --minify --dts",
@@ -15,7 +15,9 @@
   },
   "types": "lib/index.d.ts",
   "main": "lib/index.js",
-  "bin": "lib/cli.js",
+  "bin": {
+    "create-initializer": "lib/cli.js"
+  },
   "files": [
     "lib",
     "templates"
