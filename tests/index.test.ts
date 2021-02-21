@@ -36,7 +36,7 @@ test('create javascript project', async () => {
   expect(newReadMe).toContain('- {{author}} => Awesome Doe');
   expect(newReadMe).toContain('- {{email}} => awesome@example.com');
   expect(newReadMe).toContain(
-    'See https://github.com/uetchy/create-initializer#template for the further details.'
+    'See https://github.com/ClassicOldSong/create-initializer#template for the further details.'
   );
 
   const newPackageJson = readFileSync(

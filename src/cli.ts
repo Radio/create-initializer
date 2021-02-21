@@ -33,7 +33,7 @@ After the build, run ${chalk.cyan(
   text += `
 Read the docs for the further information:
 ${chalk.yellow(
-  'https://github.com/uetchy/create-initializer/blob/master/README.md'
+  'https://github.com/ClassicOldSong/create-initializer/blob/master/README.md'
 )}`;
 
   return text;

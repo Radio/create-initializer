@@ -11,7 +11,7 @@
 
 ## NOTE
 
-This is a forked and modified version of [create-create-app](https://github.com/uetchy/create-create-app). Modifications may be differ from the initial design of the project so this will not be merged to the upstream and will be made into a seperate package.
+This is a forked and modified version of [create-create-app](https://github.com/uetchy/create-create-app). Modifications may be differ from the initial design of the original project so this will not be merged to the upstream and will be made into a seperate package.
 
 ## Why?
 
@@ -293,25 +293,3 @@ create('create-greet', {
 ## Contribution
 
 PRs are always welcome!
-
-### Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://uechi.io/"><img src="https://avatars0.githubusercontent.com/u/431808?v=4" width="100px;" alt=""/><br /><sub><b>uetchy</b></sub></a><br /><a href="https://github.com/uetchy/create-create-app/commits?author=uetchy" title="Code">💻</a> <a href="https://github.com/uetchy/create-create-app/commits?author=uetchy" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://vivliostyle.org/"><img src="https://avatars1.githubusercontent.com/u/3324737?v=4" width="100px;" alt=""/><br /><sub><b>Shinyu Murakami</b></sub></a><br /><a href="https://github.com/uetchy/create-create-app/commits?author=MurakamiShinyu" title="Code">💻</a></td>
-    <td align="center"><a href="http://twitter.com/takahashim"><img src="https://avatars2.githubusercontent.com/u/10401?v=4" width="100px;" alt=""/><br /><sub><b>Masayoshi Takahashi</b></sub></a><br /><a href="https://github.com/uetchy/create-create-app/commits?author=takahashim" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

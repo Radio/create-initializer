@@ -2,7 +2,7 @@
 
 {{description}}
 
-> created by [create-initializer](https://github.com/uetchy/create-initializer/blob/master/README.md).
+> created by [create-initializer](https://github.com/ClassicOldSong/create-initializer/blob/master/README.md).
 
 ## Use
 
@@ -33,4 +33,4 @@ npx {{kebab name}} <name>
 - \{{year}} => {{year}}
 - \{{custom}} => {{custom}} (undefined until it is defined in `extra` field in `create` function arguments)
 
-See https://github.com/uetchy/create-initializer#template for the further details.
+See https://github.com/ClassicOldSong/create-initializer/#template for the further details.
