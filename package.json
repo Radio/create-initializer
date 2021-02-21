@@ -1,53 +1,84 @@
 {
-  "name": "create-whatever",
-  "description": "create 'create-' app",
-  "version": "3.0.0",
+  "name": "create-initializer",
+  "description": "Create your own `create-something` app.",
+  "version": "1.0.0",
+  "author": "ClassicOldSong <yukino@yuki.network>",
   "scripts": {
-    "build": "shx rm -rf dist && NODE_ENV=production tsc && shx chmod +x dist/cli.js",
-    "dev": "tsc -w",
-    "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs trigger",
-    "test": "echo notest"
+    "build": "npm run tsup -- --minify --dts",
+    "clean": "shx rm -rf lib 'templates/*/{yarn.lock,package-lock.json,node_modules}'",
+    "dev": "npm run tsup -- --watch",
+    "prepublishOnly": "npm run clean && npm run build",
+    "release": "release-it",
+    "test": "npm run tsup && jest",
+    "toc": "doctoc README.md",
+    "tsup": "tsup src/index.ts src/cli.ts -d lib"
   },
+  "types": "lib/index.d.ts",
+  "main": "lib/index.js",
+  "bin": "lib/cli.js",
+  "files": [
+    "lib",
+    "templates"
+  ],
   "dependencies": {
-    "@types/inquirer": "^6.5.0",
-    "@types/mustache": "^0.8.32",
-    "@types/yargs-interactive": "^2.1.0",
-    "chalk": "^2.4.2",
-    "cross-spawn": "^7.0.0",
-    "execa": "^2.0.5",
+    "@types/inquirer": "^7.3.1",
+    "@types/yargs-interactive": "^2.1.1",
+    "chalk": "^4.1.0",
+    "cross-spawn": "^7.0.3",
+    "epicfail": "^1.0.0",
+    "execa": "^5.0.0",
     "gitconfig": "^2.0.8",
-    "globby": "^10.0.1",
-    "inquirer": "^7.0.0",
+    "globby": "^11.0.2",
+    "handlebars": "^4.7.7",
+    "inquirer": "^7.3.3",
     "is-utf8": "^0.2.1",
     "license.js": "^3.1.2",
-    "mustache": "^3.1.0",
+    "slash": "^3.0.0",
+    "uuid": "^8.3.2",
     "yargs-interactive": "^3.0.0"
   },
   "devDependencies": {
-    "@types/cross-spawn": "^6.0.1",
-    "@types/node": "^12.7.11",
-    "shipjs": "^0.6.0",
-    "shx": "^0.3.2",
-    "typescript": "^3.6.3"
+    "@release-it/conventional-changelog": "^2.0.0",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.31",
+    "@types/uuid": "^8.3.0",
+    "@uetchy/doctoc": "^1.5.0",
+    "husky": "^5.0.9",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "release-it": "^14.4.1",
+    "shx": "^0.3.3",
+    "ts-jest": "^26.5.1",
+    "ts-node": "^9.1.1",
+    "tsup": "^4.0.0",
+    "typescript": "^4.1.5"
   },
-  "author": "Yasuaki Uechi <y@uechi.io>",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "bin": "dist/cli.js",
-  "bugs": {
-    "url": "https://github.com/uetchy/create-whatever/issues"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged",
+      "pre-push": "npm test"
+    }
   },
-  "files": [
-    "dist",
-    "templates"
-  ],
-  "homepage": "https://github.com/uetchy/create-whatever",
-  "keywords": [
-    "create-whatever"
-  ],
+  "lint-staged": {
+    "*.md": [
+      "doctoc -p",
+      "git add"
+    ]
+  },
+  "homepage": "https://github.com/uetchy/create-initializer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uetchy/create-whatever.git"
-  }
+    "url": "https://github.com/uetchy/create-initializer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uetchy/create-initializer/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "create-app",
+    "create-create-app"
+  ]
 }

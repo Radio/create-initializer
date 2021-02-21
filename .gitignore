@@ -1,5 +1,8 @@
-dist/
+lib/
+/example
 tmp/
+yarn.lock
+package-lock.json
 
 # Logs
 logs
