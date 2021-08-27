@@ -2,7 +2,7 @@
 
 {{description}}
 
-> created by [create-initializer](https://github.com/ClassicOldSong/create-initializer/blob/master/README.md).
+> created by [create-initializer](https://github.com/ClassicOldSong/create-initializer).
 
 ## Use
 

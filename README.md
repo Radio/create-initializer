@@ -2,11 +2,6 @@
 <h1 align="center">✨ Create Initializer</h1>
 <h6>Create your own `create-something` app.</h6>
 <br/>
-<img src="https://raw.githubusercontent.com/uetchy/create-create-app/master/.github/assets/ss1.png" alt="screenshot"/>
-<br/><br/>
-<a href="https://npmjs.org/package/create-initializer"><img src="https://img.shields.io/npm/v/create-initializer.svg"></a>
-<a href="https://npmjs.org/package/create-initializer"><img src="https://badgen.net/npm/dt/create-initializer"></a>
-<a href="https://github.com/uetchy/create-initializer/actions?workflow=test"><img src="https://github.com/uetchy/create-initializer/workflows/test/badge.svg"/></a>
 </div>
 
 ## NOTE
@@ -15,9 +10,9 @@ This is a forked and modified version of [create-create-app](https://github.com/
 
 ## Why?
 
-- ⚖️ **Built-in License chooser** No need to care about license things.
-- 🎩 **Template engine** Just put files with template strings and we will do the rest.
-- 💄 **Highly customizable** Can change caveat text, and add extra cli options.
+- ⚖️ **Built-in License selector** No need to manually add license things.
+- 🎩 **Template engine** [Mustache](https://github.com/janl/mustache.js) will do things all.
+- 💄 **Highly customizable** Changable caveat text, and add extra cli options.
 
 ## Table of contents
 
@@ -176,6 +171,8 @@ import { create } from 'create-initializer';
 
 create('create-greet', {
   templateRoot: resolve(__dirname, '..', 'templates'),
+  defaultTemplate: 'my-template',
+  templatePrefix: 'template-',
   extra: {
     language: {
       type: 'input',
@@ -259,10 +256,10 @@ create('create-greet', {
 
 ```js
 create('create-greet', {
-  caveat: async ({ answers }) => {
-    const pkg = answers.plugin;
-    await execa('yarn', ['add', plugin]);
-    console.log(`${plugin} has been added`);
+  caveat: async ({ packageDir, answers }) => {
+    const { plugin } = answers;
+    await execa('npm', ['install', '--prefix', packageDir, '-S', plugin]);
+    console.log(`"${plugin}" has been added`);
   },
 });
 ```

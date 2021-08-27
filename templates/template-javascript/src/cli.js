@@ -10,10 +10,12 @@ This is a caveat!
 You can change this in \`src/cli.js\`.
 `;
 
-// See https://github.com/ClassicOldSong/create-initializer/blob/master/README.md for the all options.
+// See https://github.com/ClassicOldSong/create-initializer/blob/master/README.md for the full option list.
 
 create('{{kebab name}}', {
   templateRoot,
+  defaultTemplate: 'my-template',
+  templatePrefix: 'template-',
   extra: {
     architecture: {
       type: 'list',
