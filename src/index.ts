@@ -62,7 +62,7 @@ async function getGitUser(): Promise<{ name?: string; email?: string }> {
   try {
     const config = await gitconfig.get({ location: 'global' });
     return config.user ?? {};
-  } catch (err) {
+  } catch (err: any) {
     return {};
   }
 }
@@ -96,7 +96,7 @@ async function installDeps(rootDir: string, useYarn: boolean) {
   }
   try {
     await spawnPromise(command, args, { stdio: 'inherit' });
-  } catch (err) {
+  } catch (err: any) {
     throw new CLIError(`installDeps failed: ${err}`);
   }
 }
@@ -127,7 +127,7 @@ function isOccupied(dirname: string) {
     return (
       fs.readdirSync(dirname).filter((s) => !s.startsWith('.')).length !== 0
     );
-  } catch (err) {
+  } catch (err: any) {
     if (err.code === 'ENOENT') {
       return false;
     }
@@ -278,7 +278,7 @@ export async function create(appName: string, options: Options) {
   try {
     await initGit(packageDir);
     console.log('\nInitialized a git repository');
-  } catch (err) {
+  } catch (err: any) {
     if (err.exitCode == 127) return; // no git available
     throw err;
   }
