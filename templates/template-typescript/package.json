@@ -15,11 +15,11 @@
     "templates"
   ],
   "dependencies": {
-    "create-initializer": "^1.0.0"
+    "create-initializer": "^1.2.0"
   },
   "devDependencies": {
-    "tsup": "^3.6.1",
-    "typescript": "^4.0.2"
+    "tsup": "^5.2.1",
+    "typescript": "^4.4.3"
   },
   "license": "{{license}}"
 }
