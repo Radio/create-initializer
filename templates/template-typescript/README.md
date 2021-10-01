@@ -33,4 +33,4 @@ npx {{lower name}} <name>
 - \{{year}} => {{year}}
 - \{{custom}} => {{custom}} (undefined until it is defined in `extra` field in `create` function arguments)
 
-See https://github.com/ClassicOldSong/create-initializer#template for the further details.
+Check https://github.com/ClassicOldSong/create-initializer#template for further details.
