@@ -173,6 +173,7 @@ create('create-greet', {
   templateRoot: resolve(__dirname, '..', 'templates'),
   defaultTemplate: 'my-template',
   templatePrefix: 'template-',
+  useYarn: true,
   extra: {
     language: {
       type: 'input',
@@ -215,6 +216,10 @@ create-something <name> --template <template>
 ### defaultTemplate (default: `default`)
 
 Set the default template choice. Works both when `promptForTemplate` is `true` or `false`.
+
+### useYarn (default: `true`)
+
+Prefer `yarn` over `npm`. NPM will still be used if Yarn is not available. 
 
 ### extra (default: `undefined`)
 

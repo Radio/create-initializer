@@ -16,6 +16,7 @@ create('{{kebab name}}', {
   templateRoot,
   defaultTemplate: 'my-template',
   templatePrefix: 'template-',
+  useYarn: true,
   extra: {
     architecture: {
       type: 'list',

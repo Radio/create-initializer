@@ -225,8 +225,10 @@ async function create(appName, options) {
 		// do not generate LICENSE
 	}
 
+	const preferYarn = options.useYarn ?? true;
+	const useYarn = preferYarn ? await IsYarnAvailable() : false;
+
 	// install dependencies using yarn / npm
-	const useYarn = await IsYarnAvailable()
 	if (await exists('package.json', projectDir)) {
 		console.log(`Installing dependencies.`)
 		await installDeps(projectDir, useYarn)
