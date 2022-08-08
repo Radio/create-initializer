@@ -228,12 +228,6 @@ async function create(appName, options) {
 	const preferYarn = options.useYarn ?? true;
 	const useYarn = preferYarn ? await IsYarnAvailable() : false;
 
-	// install dependencies using yarn / npm
-	if (await exists('package.json', projectDir)) {
-		console.log(`Installing dependencies.`)
-		await installDeps(projectDir, useYarn)
-	}
-
 	// init git
 	try {
 		await initGit(projectDir)
@@ -241,6 +235,12 @@ async function create(appName, options) {
 	} catch (err) {
 		if (err.exitCode == 127) return // no git available
 		throw err
+	}
+
+	// install dependencies using yarn / npm
+	if (await exists('package.json', projectDir)) {
+		console.log(`Installing dependencies.`)
+		await installDeps(projectDir, useYarn)
 	}
 
 	const run = (command, options = {}) => {
