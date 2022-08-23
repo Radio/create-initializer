@@ -114,8 +114,8 @@ async function copy(args) {
 		}
 		await fs.writeFile(targetPath, targetData, 'utf-8')
 
-		var unixFilePermissions = '0' + (stats.mode & parseInt('777', 8)).toString(8);
-		await fs.chmod(targetPath, unixFilePermissions)
+		var targetUnixFilePermissions = '0' + (sourceStats.mode & parseInt('777', 8)).toString(8);
+		await fs.chmod(targetPath, targetUnixFilePermissions)
 	}
 }
 
