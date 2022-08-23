@@ -1,6 +1,5 @@
 const fs = require("fs/promises")
 const Handlebars = require('handlebars')
-const isUtf8 = require('is-utf8')
 const path = require('path')
 const { v4: uuidv4 } = require('uuid')
 
@@ -106,12 +105,7 @@ async function copy(args) {
 		)
 		await prepareDirectory(targetPath)
 
-		let sourceData = await fs.readFile(sourcePath)
-		let targetData = sourceData
-		if (isUtf8(sourceData)) {
-			targetData = Buffer.from(format(sourceData, args.view))
-		}
-		await fs.writeFile(targetPath, targetData, 'utf-8')
+		await fs.copyFile(sourcePath, targetPath)
 	}
 }
 

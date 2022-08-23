@@ -20,7 +20,6 @@
     "execa": "^5.1.1",
     "gitconfig": "^2.0.8",
     "handlebars": "^4.7.7",
-    "is-utf8": "^0.2.1",
     "license.js": "^3.1.2",
     "uuid": "^8.3.2",
     "yargs-interactive": "^3.0.0"
