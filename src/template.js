@@ -107,11 +107,15 @@ async function copy(args) {
 		await prepareDirectory(targetPath)
 
 		let sourceData = await fs.readFile(sourcePath)
+		let sourceStats = await fs.stat(sourcePath)
 		let targetData = sourceData
 		if (isUtf8(sourceData)) {
 			targetData = Buffer.from(format(sourceData, args.view))
 		}
 		await fs.writeFile(targetPath, targetData, 'utf-8')
+
+		var targetUnixFilePermissions = '0' + (sourceStats.mode & parseInt('777', 8)).toString(8);
+		await fs.chmod(targetPath, targetUnixFilePermissions)
 	}
 }
 
